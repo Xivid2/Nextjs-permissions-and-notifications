@@ -50,3 +50,20 @@ export const getDocument = async ({ roomId, userId }: { roomId: string, userId: 
         throw new Error('Failed to fetch document');
     }
 }
+
+export const updateDocument = async (roomId: string, title: string) => {
+    try {
+        const updatedRoom = await liveblocks.updateRoom(roomId, {
+            metadata: {
+                title,
+            }
+        })
+
+        revalidatePath(`/documents/${roomId}`);
+
+        return parseStringify(updatedRoom);
+    } catch (error) {
+        console.error('Error updating document:', error);
+        throw new Error('Failed to update document');
+    }
+}
