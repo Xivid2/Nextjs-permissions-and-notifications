@@ -31,7 +31,7 @@ const CollaborativeRoom = ({ roomId, roomMetadata }: CollaborativeRoomProps) => 
                 if (titleToUse !== roomMetadata.title) {
                     const updatedDocument = await updateDocument(roomId, titleToUse)
 
-                    if (!updatedDocument) {
+                    if (updatedDocument) {
                         setEditing(false);
                     }
                 }
