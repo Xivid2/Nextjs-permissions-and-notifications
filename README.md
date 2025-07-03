@@ -1,3 +1,6 @@
+## Vercel live deploy
+https://liveblocks-editor-rust.vercel.app/
+
 <div align="center">
   <br />
     <a href="https://youtu.be/y5vE8y_f_OM" target="_blank">
